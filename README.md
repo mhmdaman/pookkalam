@@ -17,7 +17,7 @@ I am doing this project for a competition, to showcase both creativity and codin
 ⸻
 
 Features
-	•	Beautiful concentric floral patterns 🌼
+	•	Beautiful concentric floral patterns 
 	•	Traditional Onam colors
 	•	Digital version of the Pookkalam you can view online
 	•	Can be accessed from any device via browser
@@ -30,10 +30,7 @@ Tech Stack
 	•	CSS3
 
 ⸻
-
-🌍 Live Demo
-
-👉 View the Pookkalam Here
+ View the Pookkalam Here: https://mhmdaman.github.io/pookkalam/poovu.html
 
 ⸻
 
