@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+  <meta charset="UTF-8">
+  <title>Pookkalam Design</title>
+  <style>
+    body {
+      
+     
+     display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: green; /* page background */
+    }
+    canvas {
+      border-radius: 60%;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body style="background-color: darkgreen;">
+  <!-- Pookkalam Canvas -->
+  <div style="text-align: center;">
+    <h1 style="color:aliceblue;">🌸 ഓണാശംസകൾ 🌸</h1>
+    
+  
+  <canvas id="pookkalam" width="600" height="600"></canvas>
+    </div>
+  <script>
+    const canvas = document.getElementById("pookkalam");
+    const ctx = canvas.getContext("2d");
+    const size = 600;
+    const center = size / 2;
+
+    // helper: draw filled circle
+    function drawCircle(r, color) {
+      ctx.beginPath();
+      ctx.arc(center, center, r, 0, 2 * Math.PI);
+      ctx.fillStyle = color;
+      ctx.fill();
+    }
+
+    // Background
+    ctx.fillStyle = "brown"; // brown background
+    ctx.fillRect(0, 0, size, size);
+
+    // Outer black border
+    drawCircle(280, "yellowgreen");
+
+    // Outer alternating segments
+    const outerRadius = 270;
+    const segments = 18;
+    for (let i = 0; i < segments; i++) {
+      const start = (i * 2 * Math.PI) / segments;
+      const end = ((i + 1) * 2 * Math.PI) / segments;
+      ctx.beginPath();
+      ctx.moveTo(center, center);
+      ctx.arc(center, center, outerRadius, start, end);
+      ctx.closePath();
+      ctx.fillStyle = i % 2 === 0 ? "maroon" : "yellow"; // red/yellow
+      ctx.fill();
+    }
+
+    // Big white petals
+    const bigPetals = 15;
+    for (let i = 0; i < bigPetals; i++) {
+      const angle = (i * 2 * Math.PI) / bigPetals;
+      ctx.beginPath();
+      ctx.ellipse(
+        center + Math.cos(angle) * 80,
+        center + Math.sin(angle) * 80,
+        40, 120, angle, 0, 2 * Math.PI
+      );
+      ctx.fillStyle = "darkorange";
+      ctx.fill();
+    }
+
+    // Small green petals
+    for (let i = 0; i < bigPetals; i++) {
+      const angle = (i * 2 * Math.PI) / bigPetals + Math.PI / bigPetals;
+      ctx.beginPath();
+      ctx.ellipse(
+        center + Math.cos(angle) * 100,
+        center + Math.sin(angle) * 100,
+        20, 60, angle, 0, 2 * Math.PI
+      );
+      ctx.fillStyle = "#1b5e20"; // dark green
+      ctx.fill();
+    }
+
+    // Center circles
+    drawCircle(70, "yellow"); // yellow
+    drawCircle(50, "orange"); // orange
+    drawCircle(30, "green"); // red
+    drawCircle(10, "black");   // black dot
+  </script>
+</body>
+</html>
