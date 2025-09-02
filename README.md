@@ -36,7 +36,8 @@ Tech Stack
 
  Preview
 
-(Add a screenshot of your Pookkalam design here!)
+<img width="1600" height="1299" alt="image" src="https://github.com/user-attachments/assets/445f8545-d831-42b4-b033-d3268bcc741a" />
+
 
 ⸻
 
